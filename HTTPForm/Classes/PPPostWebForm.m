@@ -37,7 +37,7 @@
 	[_data appendData:[[NSString stringWithFormat:@"--%@",SEPARATE_STRING] dataUsingEncoding:NSUTF8StringEncoding]];
 }
 - (NSData*)commitFormSynchronous{
-	[_data appendData:[[NSString stringWithString:@"--"] dataUsingEncoding:NSUTF8StringEncoding]];
+	[_data appendData:[@"--" dataUsingEncoding:NSUTF8StringEncoding]];
 	[_request setHTTPMethod:@"POST"];
 	[_request setHTTPBody:_data];
 	[_request setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=%@",SEPARATE_STRING] forHTTPHeaderField:@"Content-Type"];
@@ -49,7 +49,7 @@
 	return self.responseData;
 }
 - (void)commitFormAsynchronous{
-	[_data appendData:[[NSString stringWithString:@"--"] dataUsingEncoding:NSUTF8StringEncoding]];
+	[_data appendData:[@"--" dataUsingEncoding:NSUTF8StringEncoding]];
 	[_request setHTTPMethod:@"POST"];
 	[_request setHTTPBody:_data];
 	[_request setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=%@",SEPARATE_STRING] forHTTPHeaderField:@"Content-Type"];

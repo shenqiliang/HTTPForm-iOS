@@ -25,6 +25,7 @@
 - (void)addTextElement:(NSString*)name value:(NSString*)value;
 - (void)addFileElement:(NSString*)name value:(NSString*)filePath;
 - (NSData*)commitFormSynchronous;
+- (void)commitFormAsynchronous;
 @property(nonatomic,assign) id<PPPostWebFormDelegate>delegate;
 @property(nonatomic,retain) NSMutableURLRequest *request;
 @property(nonatomic,retain) NSData *responseData;
